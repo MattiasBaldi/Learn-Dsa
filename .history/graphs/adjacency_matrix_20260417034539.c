@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * https://www.geeksforgeeks.org/dsa/graph-and-its-representations/
+ * https://www.geeksforgeeks.org/c/graph-representation-using-adjacency-matrix-in-c/
+ */
+
+ /*
+ [ 
+      We use an adjacency matrix to represent connections between vertices.
+      Initially, the entire matrix is filled with 0s, meaning no edges exist.
+      There is an edge between vertex 0 and vertex 1,so we set mat[0][1] = 1 and mat[1][0] = 1.
+      There is an edge between vertex 0 and vertex 2,so we set mat[0][2] = 1 and mat[2][0] = 1.
+      There is an edge between vertex 1 and vertex 2,so we set mat[1][2] = 1 and mat[2][1] = 1.  
+ ]
+ */
+
+ typedef struct {
+  int vertices; 
+  int** adjMatrix; 
+ } Graph; 
+  
+ // vertices + edges (size + column size)
+ Graph* createGraph(int vertices) 
+ {
+  Graph* graph = (Graph*)malloc(sizeof(Graph)); 
+  graph->vertices = vertices; 
+
+  // allocate memory
+  graph->adjMatrix = (int**)malloc(vertices * sizeof(int*)); 
+  for (int i = 0; i < vertices; i++)
+  {
+    graph->adjMatrix[i] = (int*)calloc(vertices, sizeof(int));
+
+    return graph; 
+  }
+
+  /*
+    We use an adjacency matrix to represent connections between vertices.
+    Initially, the entire matrix is filled with 0s, meaning no edges exist.
+    There is an edge between vertex 0 and vertex 1,so we set mat[0][1] = 1 and mat[1][0] = 1.
+    There is an edge between vertex 0 and vertex 2,so we set mat[0][2] = 1 and mat[2][0] = 1.
+    There is an edge between vertex 1 and vertex 2,so we set mat[1][2] = 1 and mat[2][1] = 1.
+  
+    Adjacency matrix for this graph:
+
+      0 1 2
+  0 [ 0 1 1 ]
+  1 [ 1 0 1 ]
+  2 [ 1 1 0 ]
+
+  Flattened in memory as:
+  [0, 1, 1,
+   1, 0, 1,
+   1, 1, 0]
+  */
+ }
+
+
+ void addEdge(Graph* graph, int src, int dest)
+ {
+  if (src >= graph->verices || dest >= graph->vertices)
+  {
+    printf("Invalid vertices!\n"); 
+    return; 
+  }
+ }
+
+ int main() {
+  int V = 3; 
+
+
+ }
+
